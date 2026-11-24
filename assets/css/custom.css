@@ -1,0 +1,70 @@
+/* CCM CONSTRUCT LTD - small additions to Tailwind */
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Subtle blueprint-style grid used on dark panels */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Legal dialogs */
+dialog.legal {
+  max-width: min(46rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 3rem);
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0.75rem;
+  color: #1A1D21;
+  background: #ffffff;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+}
+
+dialog.legal::backdrop {
+  background: rgba(26, 29, 33, 0.7);
+}
+
+dialog.legal h3 {
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.35rem;
+  color: #1F3A5F;
+}
+
+dialog.legal p,
+dialog.legal li {
+  line-height: 1.65;
+}
+
+dialog.legal ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0.35rem 0;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
